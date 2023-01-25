@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chat</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <script defer src="./assets/socket.io.min.js"></script>
+  <script defer src="./script.js"></script>
+  <body>
+    <div id="backdrop"></div>
+    <div id="side-drawer">
+      <p class="brand">Daagu</p>
+      <p style="font-size: xx-large; padding: 10px; color: #171717">Users</p>
+      <div id="users-sidebar"></div>
+      <a href="/"> <button class="btb-secondary">Leave Group</button></a>
+    </div>
+    <div class="screen">
+      <div class="app">
+        <div class="app-left">
+          <div class="top">
+            <p class="brand">Dagu</p>
+          </div>
+          <div class="bottom">
+            <p style="font-size: xx-large; padding: 10px">Users</p>
+            <div id="users" class="rooms"></div>
+          </div>
+        </div>
+        <div class="app-right">
+          <div class="top">
+            <div class="top-left">
+              <p id="room-name" class="room-name">Habeshan Coders</p>
+              <p id="room-state" class="room-state"></p>
+            </div>
+            <div class="top-right">
+              <a href="/">
+                <button class="btb-secondary">Leave Group</button></a
+              >
+              <div id="humberger">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+          </div>
+          <div class="middle">
+            <div id="messages" class="messages"></div>
+          </div>
+          <div class="bottom">
+            <form id="message-form">
+              <input
+                id="message-input"
+                type="text"
+                name="message-input"
+                placeholder="type here ...."
+                required
+                autocomplete="off"
+              />
+              <button id="send" type="submit">Send</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

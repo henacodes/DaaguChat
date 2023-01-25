@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chat</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="screen">
+      <div class="app">
+        <div class="choose">
+           <h1 class="brand">Daagu</h1>
+            <img src="./assets/connect.svg" width="100%"/>
+           <br><br><br>
+            <p>Whats your name?</p>
+            <input type="text" id="username" placeholder="Enter your name"/>
+            <p>Choose a room</p>
+            <select id="room-select" class='room-choice' name="room-choice" id="">
+                <option value="Dertogada">Dertogada</option>
+                <option value="Ramatohara">Ramatohara</option>
+                <option value="Zhantozhara">Zhantozhara</option>
+                <option value="Yoratorad">Yoratorad</option>
+                <option value="Yotod">Yotod</option>
+            </select>
+           <a href="/chat.html"> <button id="goToChat">Start Chatting</button></a>
+        </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      localStorage.removeItem("daaguData")
+      const submitButton = document.getElementById("goToChat")
+      submitButton.addEventListener("click", ()=>{
+        const roomName = document.getElementById("room-select").value
+        const username = document.getElementById("username").value
+        localStorage.setItem("daaguData", JSON.stringify({roomName,username}))
+      
+      })
+    </script>
+  </body>
+</html>
